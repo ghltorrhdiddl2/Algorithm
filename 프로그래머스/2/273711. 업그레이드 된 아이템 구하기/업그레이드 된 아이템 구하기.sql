@@ -1,0 +1,4 @@
+-- 코드를 작성해주세요
+select ITEM_INFO.ITEM_ID, ITEM_NAME, RARITY from ITEM_INFO join ITEM_TREE on ITEM_INFO.ITEM_ID = ITEM_TREE.ITEM_ID
+where PARENT_ITEM_ID in (select ITEM_ID from ITEM_INFO where RARITY='RARE')
+order by ITEM_INFO.ITEM_ID desc
