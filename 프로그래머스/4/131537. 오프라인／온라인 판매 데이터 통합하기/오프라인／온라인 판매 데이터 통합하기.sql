@@ -1,0 +1,4 @@
+-- 2022년 3월의 오프라인/온라인 상품 판매
+SELECT date_format(SALES_DATE,'%Y-%m-%d') as SALES_DATE, PRODUCT_ID, USER_ID, SALES_AMOUNT from (select SALES_DATE, PRODUCT_ID, USER_ID, SALES_AMOUNT from ONLINE_SALE union all select SALES_DATE, PRODUCT_ID, NULL as USER_ID, SALES_AMOUNT from OFFLINE_SALE) union_table
+where SALES_DATE like '2022-03%'
+order by SALES_DATE, PRODUCT_ID, USER_ID
