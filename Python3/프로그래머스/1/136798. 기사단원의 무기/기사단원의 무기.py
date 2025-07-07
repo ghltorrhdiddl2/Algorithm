@@ -7,7 +7,7 @@ def solution(number, limit, power):
                 div.append(i)
                 if i!=n//i:
                     div.append(n//i)
-        return sorted(div)
+        return div
     
     for n in range(1,number+1):
         if len(get_div(n)) > limit:
